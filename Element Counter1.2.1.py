@@ -1,21 +1,23 @@
 import os 
 
+# Function that counts the total amount of words in a text
 def countWords():
     text = input("Insert text here: ")
     count = 1
-    for i in text.strip():
+    for i in text.strip(): # stripping the string of its blank spaces in the beginning and end to avoid counting mistakes
         if i == " ":
             count += 1
     print("Total amount of words: ", count)
 
-
+# Functions that counts user-inputted elements in a text
 def countElement():
     text = input("Insert text here: ")
     element = input("What element do you want to count? ")
     elementCount = text.count(element)
     print("There were a total of ",elementCount, " times it appeared in the text")
 
-quitCondition = False
+quitCondition = False # boolean that decides whether the program should return to the main menu or terminate
+# Function that checks whether the quitCondition boolean should stay false or become true terminating the program
 def quitChecker():
     global quitCondition
     while not quitCondition:
@@ -27,7 +29,7 @@ def quitChecker():
             break
         else:
             clear()
-            print("Invalid output, please try again\n")
+            print("Invalid input, please try again\n")
             quitCondition = False
             pass
         break
